@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seyoh <seyoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: seyoh <seyoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/28 21:45:52 by seyoh             #+#    #+#             */
-/*   Updated: 2022/05/30 18:22:46 by seyoh            ###   ########.fr       */
+/*   Created: 2022/06/05 12:11:58 by seyoh             #+#    #+#             */
+/*   Updated: 2022/06/05 12:27:42 by seyoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
+#ifndef FT_H
+# define FT_H
 
-void	ft_putnbr(int nb)
-{
-	unsigned int	nbr;
+void	ft_putchar(char c);
+void	ft_swap(int *a, int *b);
+void	ft_putstr(char *str);
+int		ft_strlen(char *str);
+int		ft_strcmp(char *s1, char *s2);
 
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nbr = nb * -1;
-	}
-	else
-		nbr = nb;
-	if (nbr / 10 != 0)
-		ft_putnbr(nbr / 10);
-	ft_putchar(nbr % 10 + 48);
-}
+#endif

@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seyoh <seyoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: seyoh <seyoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/28 21:45:52 by seyoh             #+#    #+#             */
-/*   Updated: 2022/05/30 18:22:46 by seyoh            ###   ########.fr       */
+/*   Created: 2022/06/03 23:24:27 by seyoh             #+#    #+#             */
+/*   Updated: 2022/06/04 14:40:46 by seyoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
+#include <stdlib.h>
 
-void	ft_putnbr(int nb)
+int	*ft_range(int min, int max)
 {
-	unsigned int	nbr;
+	int	i;
+	int	*range;
 
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nbr = nb * -1;
-	}
-	else
-		nbr = nb;
-	if (nbr / 10 != 0)
-		ft_putnbr(nbr / 10);
-	ft_putchar(nbr % 10 + 48);
+	i = 0;
+	if (min >= max)
+		return (0);
+	range = (int *)malloc(sizeof(int) * (max - min));
+	if (!range)
+		return (0);
+	while (min < max)
+		range[i++] = min++;
+	return (range);
 }

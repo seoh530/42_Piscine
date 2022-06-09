@@ -12,5 +12,12 @@
 
 void	ft_print_memory(void)
 {
-	return ;
+	
+}
+
+void	print_address_16(unsigned long long adrs, int len)
+{
+	unsigned long long num;
+
+	num = adrs % 16;
 }

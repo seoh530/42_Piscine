@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seyoh <seyoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/28 21:45:52 by seyoh             #+#    #+#             */
-/*   Updated: 2022/05/30 18:22:46 by seyoh            ###   ########.fr       */
+/*   Created: 2022/05/26 15:44:19 by seyoh             #+#    #+#             */
+/*   Updated: 2022/05/28 18:08:03 by seyoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
-
-void	ft_putnbr(int nb)
+int	ft_strcmp(char *s1, char *s2)
 {
-	unsigned int	nbr;
+	int	i;
 
-	if (nb < 0)
+	i = 0;
+	while (s1[i] || s2[i])
 	{
-		ft_putchar('-');
-		nbr = nb * -1;
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
 	}
-	else
-		nbr = nb;
-	if (nbr / 10 != 0)
-		ft_putnbr(nbr / 10);
-	ft_putchar(nbr % 10 + 48);
+	return (0);
 }

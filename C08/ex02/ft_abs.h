@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_abs.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seyoh <seyoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: seyoh <seyoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/28 21:45:52 by seyoh             #+#    #+#             */
-/*   Updated: 2022/05/30 18:22:46 by seyoh            ###   ########.fr       */
+/*   Created: 2022/06/05 11:59:41 by seyoh             #+#    #+#             */
+/*   Updated: 2022/06/05 19:45:06 by seyoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
+#ifndef FT_ABS_H
 
-void	ft_putnbr(int nb)
-{
-	unsigned int	nbr;
+# define FT_ABS_H
 
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nbr = nb * -1;
-	}
-	else
-		nbr = nb;
-	if (nbr / 10 != 0)
-		ft_putnbr(nbr / 10);
-	ft_putchar(nbr % 10 + 48);
-}
+# define ABS(value) (value >= 0 ? value : -value)
+
+#endif

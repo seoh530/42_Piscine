@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_point.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seyoh <seyoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/28 21:45:52 by seyoh             #+#    #+#             */
-/*   Updated: 2022/05/30 18:22:46 by seyoh            ###   ########.fr       */
+/*   Created: 2022/06/05 14:03:42 by seyoh             #+#    #+#             */
+/*   Updated: 2022/06/05 14:10:44 by seyoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
+#ifndef FT_POINT_H
+# define FT_POINT_H
 
-void	ft_putnbr(int nb)
+typedef struct s_point
 {
-	unsigned int	nbr;
+	int	x;
+	int	y;
+}t_point;
 
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nbr = nb * -1;
-	}
-	else
-		nbr = nb;
-	if (nbr / 10 != 0)
-		ft_putnbr(nbr / 10);
-	ft_putchar(nbr % 10 + 48);
-}
+#endif

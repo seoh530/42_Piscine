@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seyoh <seyoh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: seyoh <seyoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/28 21:45:52 by seyoh             #+#    #+#             */
-/*   Updated: 2022/05/30 18:22:46 by seyoh            ###   ########.fr       */
+/*   Created: 2022/06/09 13:45:06 by seyoh             #+#    #+#             */
+/*   Updated: 2022/06/09 13:46:47 by seyoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
+#include <unistd.h>
 
-void	ft_putnbr(int nb)
+void	ft_putstr(char *str)
 {
-	unsigned int	nbr;
+	int i;
 
-	if (nb < 0)
+	i = 0;
+	while(str[i])
 	{
-		ft_putchar('-');
-		nbr = nb * -1;
+		write(1, &str[i], 1);
 	}
-	else
-		nbr = nb;
-	if (nbr / 10 != 0)
-		ft_putnbr(nbr / 10);
-	ft_putchar(nbr % 10 + 48);
 }
